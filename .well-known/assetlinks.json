@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "it.assistenza.mamma",
+      "sha256_cert_fingerprints": [
+        "A6:1E:9E:98:2C:24:69:56:C5:CF:D5:5D:38:6C:47:1B:18:E2:81:8A:62:5C:9A:17:84:16:96:DC:5F:AC:63:8D"
+      ]
+    }
+  }
+]

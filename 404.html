@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Assistenza</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #F7F5F0; color: #1C1B19; font-family: system-ui, sans-serif; }
+  main { max-width: 380px; padding: 28px; display: flex; flex-direction: column; gap: 28px; text-align: center; }
+  h1 { margin: 0; font-size: 32px; line-height: 1.2; }
+  p { margin: 0; font-size: 21px; line-height: 1.45; color: #4A4740; }
+  a { display: flex; align-items: center; justify-content: center; height: 72px; border-radius: 16px; background: #1F7A4D; color: #fff; font-size: 24px; font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+<!--
+  Pagina di riserva: GitHub Pages la serve per ogni /s/<token> (non esiste un file per ogni token).
+  Normalmente il link apre direttamente l'app; questa pagina compare solo se si apre nel browser.
+-->
+<main>
+  <h1>Tocca il pulsante verde</h1>
+  <p>Si apre l'app e tuo figlio ti aiuta.</p>
+  <a id="open" href="#">Apri l'assistenza</a>
+</main>
+<script>
+  var m = location.pathname.match(/\/s\/([A-Za-z0-9_-]+)/);
+  var btn = document.getElementById('open');
+  if (m) {
+    btn.href = 'intent://' + location.host + '/s/' + m[1] +
+      '#Intent;scheme=https;package=it.assistenza.mamma;end';
+  } else {
+    document.querySelector('h1').textContent = 'Link non valido';
+    document.querySelector('p').textContent = 'Chiedi a tuo figlio di mandarti un link nuovo.';
+    btn.remove();
+  }
+</script>
+</body>
+</html>
